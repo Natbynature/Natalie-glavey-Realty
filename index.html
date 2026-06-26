@@ -1,0 +1,2161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalie Glavey | Real Estate | Oxford, Alabama</title>
+  <meta name="description" content="Natalie Glavey â€” Real estate agent rooted in Oxford, Alabama, serving Calhoun County and Eastern Alabama. Rooted in Alabama. Here to Find You Home." />
+
+  <!-- ============================================================
+    FAVICON: green square with house emoji
+  ============================================================ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%233B5E45'/><text y='.9em' font-size='75' x='12'>ðŸ¡</text></svg>" />
+
+  <!-- ============================================================
+    GOOGLE FONTS
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+    GOOGLE ANALYTICS â€” Uncomment and replace G-XXXXXXXXXX with your
+    Measurement ID from analytics.google.com to activate tracking.
+    Steps:
+      1. Go to analytics.google.com â†’ Admin â†’ Create Property
+      2. Copy your "G-XXXXXXXXXX" Measurement ID
+      3. Replace both instances of G-XXXXXXXXXX below
+      4. Remove the comment wrappers (<!-- and -->)
+  ============================================================ -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --forest:   #3B5E45;
+      --beige:    #F5F0E8;
+      --brown:    #7A5230;
+      --sage:     #A8BFA8;
+      --cream:    #FAF7F2;
+      --white:    #FFFFFF;
+      --dark:     #2A2A2A;
+      --mid:      #6B6B6B;
+      --light:    #E8E2D8;
+      --forest-dark: #2D4835;
+      --forest-light: #4D7A5A;
+      --shadow-sm:  0 2px 8px rgba(59,94,69,0.12);
+      --shadow-md:  0 6px 24px rgba(59,94,69,0.16);
+      --shadow-lg:  0 12px 48px rgba(59,94,69,0.20);
+      --radius:    12px;
+      --radius-lg: 20px;
+      --trans:     0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       TYPOGRAPHY HELPERS
+    ============================================================ */
+    .font-pacifico { font-family: 'Pacifico', cursive; }
+    .font-lora     { font-family: 'Lora', serif; }
+    .font-caveat   { font-family: 'Caveat', cursive; }
+    .font-inter    { font-family: 'Inter', sans-serif; }
+
+    /* ============================================================
+       SCROLL REVEAL (JS adds .revealed)
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.34s; }
+    .reveal-delay-4 { transition-delay: 0.46s; }
+    .reveal-delay-5 { transition-delay: 0.58s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ============================================================
+       SECTION WRAPPERS
+    ============================================================ */
+    section { position: relative; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform var(--trans), background var(--trans), box-shadow var(--trans), color var(--trans);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-green  { background: var(--forest); color: var(--white); border-color: var(--forest); }
+    .btn-green:hover  { background: var(--forest-dark); }
+    .btn-outline { background: transparent; color: var(--forest); border-color: var(--forest); }
+    .btn-outline:hover { background: var(--forest); color: var(--white); }
+
+    /* ============================================================
+       1. STICKY NAV
+    ============================================================ */
+    #main-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: padding var(--trans), box-shadow var(--trans), background var(--trans);
+      padding: 18px 0;
+    }
+    #main-nav.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 2px 20px rgba(59,94,69,0.14);
+      background: rgba(250,247,242,0.97);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: var(--forest);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color var(--trans);
+    }
+    .nav-links a:hover { color: var(--forest); }
+
+    .nav-cta { flex-shrink: 0; }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--forest);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    .nav-mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: var(--cream);
+      border-top: 1px solid var(--light);
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      padding: 14px 32px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: var(--dark);
+      border-bottom: 1px solid var(--light);
+      transition: background var(--trans);
+    }
+    .nav-mobile-menu a:hover { background: var(--beige); }
+    .nav-mobile-menu .btn { margin: 16px 32px; width: calc(100% - 64px); justify-content: center; }
+
+    /* ============================================================
+       2. HERO
+    ============================================================ */
+    #hero {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ============================================================
+       HOW TO SWAP HERO IMAGE:
+       Replace the background of #hero-image with your photo URL.
+       Example:
+         #hero-image { background-image: url('your-photo.jpg'); }
+       Or set it inline in the HTML:
+         <div id="hero-image" style="background-image:url('photo.jpg')">
+       Recommended size: at least 1920Ã—1080px, landscape orientation.
+    ============================================================ */
+    #hero-image {
+      position: absolute;
+      inset: -20% 0;
+      background-image: url('HeroPhoto.jpg');
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(45,72,53,0.55) 0%, rgba(45,72,53,0.3) 50%, rgba(45,72,53,0.65) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      padding: 0 24px;
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: var(--sage);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.3s forwards;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.15;
+      margin: 12px 0;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s ease 0.55s forwards;
+    }
+
+    .hero-tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease 1.0s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s ease infinite 1.5s;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.3s forwards, bounce 2.5s ease infinite 2.5s;
+    }
+    .hero-scroll svg { width: 20px; height: 20px; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-title, .hero-tagline, .hero-ctas, .hero-scroll {
+        opacity: 1; transform: none; animation: none;
+      }
+    }
+
+    /* ============================================================
+       3. ABOUT
+    ============================================================ */
+    #about {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-label {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: var(--forest);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .about-heading {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--forest);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .about-body {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #4A4A4A;
+      margin-bottom: 16px;
+    }
+
+    .about-signature {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: var(--forest);
+      margin-top: 24px;
+    }
+
+    /* Photo frame with offset sage border */
+    .about-photo-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -16px; right: -16px;
+      bottom: 16px; left: 16px;
+      border: 3px solid var(--sage);
+      border-radius: var(--radius-lg);
+      z-index: 0;
+    }
+
+    /* ============================================================
+       HOW TO SWAP HEADSHOT:
+       Replace the background of #about-photo with your headshot URL.
+       Example:
+         document.getElementById('about-photo').style.backgroundImage = "url('headshot.jpg')";
+       Or in CSS: #about-photo { background-image: url('headshot.jpg'); }
+       Recommended: Square or portrait crop, 600Ã—700px minimum.
+    ============================================================ */
+    #about-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, var(--sage) 0%, var(--forest) 100%);
+      background-image: url('headshot.png');
+      background-size: cover;
+      background-position: center top;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+    }
+    #about-photo::after {
+      content: 'Your Headshot Here';
+      /* Remove this ::after block once real photo is added */
+    }
+
+    /* ============================================================
+       4. LISTINGS (Polaroid Stack)
+    ============================================================ */
+    #listings {
+      padding: 100px 0;
+      background: var(--beige);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-label {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: var(--brown);
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--forest);
+    }
+    .section-sub {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--mid);
+      margin-top: 10px;
+      font-size: 1.05rem;
+    }
+
+    .polaroid-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 520px;
+      perspective: 1200px;
+    }
+
+    .polaroid-card {
+      position: absolute;
+      width: 320px;
+      background: var(--white);
+      border-radius: 4px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+      padding: 14px 14px 0 14px;
+      cursor: pointer;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1),
+                  opacity 0.4s ease,
+                  box-shadow 0.3s ease;
+      will-change: transform;
+      user-select: none;
+    }
+    .polaroid-card.active {
+      z-index: 10;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.24), 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .polaroid-card.behind-1 { z-index: 7; }
+    .polaroid-card.behind-2 { z-index: 4; }
+    .polaroid-card.behind-3 { z-index: 1; }
+    .polaroid-card.exit-left {
+      transform: translateX(-140%) rotate(-18deg) !important;
+      opacity: 0;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
+    }
+
+    /* ============================================================
+       HOW TO SWAP LISTING PHOTOS:
+       Each listing photo div has an id: listing-photo-1 through listing-photo-4
+       Replace the background-image for each:
+         #listing-photo-1 { background-image: url('property1.jpg'); }
+       Recommended: 16:9 or 4:3 landscape, at least 600Ã—400px.
+       Remove the ::after pseudo-element label once photo is added.
+    ============================================================ */
+    .polaroid-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--forest) 100%);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Caveat', cursive;
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+    }
+
+    #listing-photo-1 { /* SWAP: background-image: url('listing-1.jpg'); */ }
+    #listing-photo-2 { background: linear-gradient(135deg, #7A5230 0%, #A8BFA8 100%); /* SWAP: background-image: url('listing-2.jpg'); */ }
+    #listing-photo-3 { background: linear-gradient(135deg, #A8BFA8 0%, #3B5E45 100%); /* SWAP: background-image: url('listing-3.jpg'); */ }
+    #listing-photo-4 { background: linear-gradient(135deg, #F5F0E8 0%, #7A5230 100%); /* SWAP: background-image: url('listing-4.jpg'); */ }
+
+    .polaroid-label {
+      padding: 14px 6px 18px;
+      text-align: center;
+    }
+    .polaroid-address {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      color: var(--dark);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .polaroid-price {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: var(--forest);
+      font-weight: 700;
+      margin: 2px 0;
+    }
+    .polaroid-details {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Listing navigation */
+    .polaroid-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .nav-arrow {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--forest);
+      background: var(--white);
+      color: var(--forest);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--trans), color var(--trans), transform var(--trans);
+      flex-shrink: 0;
+    }
+    .nav-arrow:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .nav-arrow svg { width: 20px; height: 20px; }
+
+    .dot-nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      cursor: pointer;
+      transition: background var(--trans), transform var(--trans);
+      border: none;
+    }
+    .dot.active { background: var(--forest); transform: scale(1.3); }
+
+    /* ============================================================
+       5. TESTIMONIALS
+    ============================================================ */
+    #testimonials {
+      padding: 100px 0;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .testimonials-track-wrap {
+      overflow: hidden;
+      margin-top: 50px;
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+      will-change: transform;
+    }
+
+    .testimonial-card {
+      min-width: calc(50% - 12px);
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tape-strip {
+      background: var(--sage);
+      height: 28px;
+      width: 100%;
+      opacity: 0.7;
+      position: relative;
+    }
+    .tape-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 8px,
+        rgba(255,255,255,0.15) 8px,
+        rgba(255,255,255,0.15) 9px
+      );
+    }
+
+    .testimonial-inner {
+      padding: 24px 28px 28px;
+    }
+
+    .testimonial-stars {
+      color: var(--brown);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #4A4A4A;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-client {
+      font-family: 'Caveat', cursive;
+      font-size: 1.25rem;
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .testimonial-location {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mid);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+    }
+
+    .testimonials-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    /* ============================================================
+       6. CONTACT FORM
+    ============================================================ */
+    #contact {
+      padding: 100px 0;
+      background: var(--beige);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-intro-title {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--forest);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .contact-intro-body {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--mid);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 18px; }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 22px; height: 22px; }
+
+    .contact-detail-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+    }
+    .contact-detail-value {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-top: 2px;
+    }
+    .contact-detail-value a { transition: color var(--trans); }
+    .contact-detail-value a:hover { color: var(--forest); }
+
+    /* Form Card */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .form-inner { padding: 28px 32px 32px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--light);
+      border-radius: 8px;
+      background: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--dark);
+      transition: border-color var(--trans), box-shadow var(--trans);
+      outline: none;
+      appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%236B6B6B' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(168,191,168,0.35);
+    }
+
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #c0392b;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    /* Custom checkbox */
+    .checkbox-group { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px; }
+    .checkbox-group input[type="checkbox"] { display: none; }
+    .checkbox-custom {
+      width: 22px; height: 22px;
+      border: 2px solid var(--light);
+      border-radius: 5px;
+      background: var(--cream);
+      flex-shrink: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color var(--trans), background var(--trans);
+      margin-top: 1px;
+    }
+    .checkbox-group input[type="checkbox"]:checked + .checkbox-custom {
+      background: var(--forest);
+      border-color: var(--forest);
+    }
+    .checkbox-group input[type="checkbox"]:checked + .checkbox-custom::after {
+      content: '';
+      width: 6px; height: 11px;
+      border: 2px solid white;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+    .checkbox-error .checkbox-custom {
+      border-color: #c0392b;
+      animation: shake 0.4s ease;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+
+    .checkbox-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .form-success {
+      display: none;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .form-success.visible { display: block; }
+    .success-icon {
+      width: 64px; height: 64px;
+      background: var(--forest);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+    }
+    .success-icon svg { width: 32px; height: 32px; }
+    .success-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .success-body {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .success-sig {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: var(--forest);
+    }
+
+    /* ============================================================
+       7. NEWSLETTER
+    ============================================================ */
+    #newsletter {
+      padding: 80px 0;
+      background: var(--forest);
+    }
+
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .newsletter-eyebrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: var(--sage);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .newsletter-title {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .newsletter-body {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .newsletter-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .newsletter-form-inner { padding: 28px 28px 28px; }
+    .newsletter-success {
+      display: none;
+      padding: 48px 28px;
+      text-align: center;
+    }
+    .newsletter-success.visible { display: block; }
+
+    /* ============================================================
+       8. MARQUEE BANNER
+    ============================================================ */
+    #marquee {
+      background: var(--brown);
+      overflow: hidden;
+      padding: 18px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marqueeScroll 22s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.15rem;
+      color: var(--beige);
+      padding: 0 36px;
+      flex-shrink: 0;
+    }
+
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+
+    /* ============================================================
+       9. FOOTER
+    ============================================================ */
+    #footer {
+      background: var(--forest-dark);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4rem;
+      color: var(--white);
+    }
+
+    .footer-copy {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      transition: color var(--trans);
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--trans), border-color var(--trans), color var(--trans), transform var(--trans);
+    }
+    .social-icon:hover {
+      background: var(--white);
+      color: var(--forest-dark);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+    .social-icon svg { width: 18px; height: 18px; }
+
+    /* ============================================================
+       FLOATING CALL BUTTON
+    ============================================================ */
+    #call-pill {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--forest);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 14px 24px;
+      box-shadow: 0 4px 20px rgba(59,94,69,0.35);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform var(--trans), box-shadow var(--trans);
+      /* ============================================================
+         SWAP PHONE NUMBER:
+         Change the href below to your real number, e.g. tel:+12566768440
+      ============================================================ */
+      text-decoration: none;
+    }
+    #call-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(59,94,69,0.4);
+    }
+    #call-pill svg { width: 20px; height: 20px; flex-shrink: 0; }
+    #call-pill .call-label { white-space: nowrap; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 860px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-photo-wrap { max-width: 380px; margin: 0 auto; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .newsletter-grid { grid-template-columns: 1fr; gap: 36px; }
+
+      .testimonial-card { min-width: calc(100% - 0px); }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-right { justify-content: center; }
+
+      .polaroid-card { width: 280px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      #about { padding: 70px 0; }
+      #listings { padding: 70px 0; }
+      #testimonials { padding: 70px 0; }
+      #contact { padding: 70px 0; }
+      #newsletter { padding: 60px 0; }
+
+      .form-row { grid-template-columns: 1fr; }
+      .polaroid-card { width: 260px; }
+
+      #call-pill .call-label { display: none; }
+      #call-pill { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+  1. STICKY NAV
+============================================================ -->
+<nav id="main-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo font-pacifico" aria-label="Natalie Glavey Home">Natalie Glavey</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#featured-reel">Featured</a></li>
+      <li><a href="#area">Our Area</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn-green nav-cta">Book a Call</a>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile-menu" id="nav-mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#about" class="nav-mobile-link">About</a>
+    <a href="#listings" class="nav-mobile-link">Listings</a>
+    <a href="#featured-reel" class="nav-mobile-link">Featured</a>
+    <a href="#area" class="nav-mobile-link">Our Area</a>
+    <a href="#testimonials" class="nav-mobile-link">Reviews</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-green">Book a Call</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+  2. HERO SECTION
+  ============================================================
+  HOW TO ADD HERO PHOTO:
+  Option A (CSS): Add to <style> above â€” #hero-image { background-image: url('hero-photo.jpg'); }
+  Option B (inline style on the div below): style="background-image:url('hero-photo.jpg')"
+  Recommended size: 1920Ã—1080px or larger, landscape.
+  After adding, you can remove the gradient fallback in the CSS.
+============================================================ -->
+<section id="hero" aria-label="Hero banner">
+  <div id="hero-image" role="img" aria-label="Beautiful home in Calhoun County, Alabama"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Oxford, Alabama Â· Calhoun County</p>
+    <h1 class="hero-title font-pacifico">Natalie Glavey</h1>
+    <p class="hero-tagline font-lora">Rooted in Alabama. Here to Find You Home.</p>
+    <div class="hero-ctas">
+      <a href="#listings" class="btn btn-green">Browse Listings</a>
+      <a href="#contact" class="btn" style="background:rgba(255,255,255,0.18);color:white;border-color:rgba(255,255,255,0.5);backdrop-filter:blur(4px)">Let's Talk</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+  3. ABOUT ME
+============================================================ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Bio -->
+      <div>
+        <span class="about-label reveal">A little about me</span>
+        <h2 class="about-heading font-pacifico reveal reveal-delay-1" id="about-heading">Hi, I'm Natalie.</h2>
+        <p class="about-body reveal reveal-delay-2">
+          I grew up between Colorado and Alabama, and after years of knowing what it feels like to move and find your footing somewhere new, I chose Oxford â€” and I've called it home for the past seven years. This place has a way of getting into your heart â€” the neighbors who wave from the porch, the Friday night lights, the way the air smells after a summer rain. When you work with me, you're not just getting an agent. You're getting someone who truly knows what it means to put down roots here, and who cares deeply about helping you do the same.
+        </p>
+        <p class="about-body reveal reveal-delay-3">
+          Whether you're buying your very first home, upsizing for a growing family, or finding that perfect quiet place to settle into, I'm here to walk every step of the journey with you. I believe real estate should feel personal â€” because it is. Your home is where your story happens.
+        </p>
+        <p class="about-body reveal reveal-delay-4">
+          I serve Oxford, Anniston, Jacksonville, Piedmont, and the surrounding Eastern Alabama communities with honest guidance, patient communication, and a genuine love for this corner of Alabama.
+        </p>
+        <p class="about-signature font-caveat reveal reveal-delay-5">â€” Natalie</p>
+      </div>
+
+      <!-- Right: Headshot -->
+      <div class="reveal reveal-delay-2">
+        <div class="about-photo-wrap">
+          <!-- ============================================================
+            HOW TO ADD HEADSHOT:
+            Replace the CSS background on #about-photo:
+              #about-photo { background-image: url('natalie-headshot.jpg'); }
+            Or add inline: style="background-image:url('headshot.jpg')"
+            Remove the ::after CSS rule for #about-photo once photo is added.
+            Recommended: 600Ã—750px portrait or square crop.
+          ============================================================ -->
+          <div id="about-photo" role="img" aria-label="Natalie Glavey, Real Estate Agent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ============================================================
+  STATS BAR
+============================================================ -->
+<section id="stats-bar" style="background:var(--forest);padding:60px 0;" aria-label="Natalie Glavey by the numbers">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;" class="stats-grid">
+
+      <div class="reveal">
+        <div style="font-family:'Pacifico',cursive;font-size:2.6rem;color:var(--white);line-height:1;">1+</div>
+        <div style="font-family:'Caveat',cursive;font-size:1.15rem;color:var(--sage);margin-top:6px;">Year in Real Estate</div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div style="font-family:'Pacifico',cursive;font-size:2.6rem;color:var(--white);line-height:1;">6+</div>
+        <div style="font-family:'Caveat',cursive;font-size:1.15rem;color:var(--sage);margin-top:6px;">Buyers & Sellers Served</div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div style="font-family:'Pacifico',cursive;font-size:2.6rem;color:var(--white);line-height:1;">NAR</div>
+        <div style="font-family:'Caveat',cursive;font-size:1.15rem;color:var(--sage);margin-top:6px;">Member in Good Standing</div>
+      </div>
+
+      <div class="reveal reveal-delay-3">
+        <div style="font-family:'Pacifico',cursive;font-size:2.6rem;color:var(--white);line-height:1;">FHA &amp; VA</div>
+        <div style="font-family:'Caveat',cursive;font-size:1.15rem;color:var(--sage);margin-top:6px;">Loan Specialist</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+@media (max-width:860px) { .stats-grid { grid-template-columns: repeat(2,1fr) !important; } }
+@media (max-width:480px) { .stats-grid { grid-template-columns: 1fr !important; } }
+</style>
+<!-- ============================================================
+  4. LISTINGS â€” Polaroid Stack
+============================================================ -->
+<section id="listings" aria-labelledby="listings-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Current Properties</span>
+      <h2 class="section-title font-pacifico reveal reveal-delay-1" id="listings-heading">Featured Listings</h2>
+      <p class="section-sub font-lora reveal reveal-delay-2">Homes worth coming home to, right here in Calhoun County.</p>
+    </div>
+
+    <!-- Polaroid Stage -->
+    <div class="polaroid-stage" id="polaroid-stage" role="region" aria-label="Property listings carousel" aria-live="polite">
+
+      <!-- LISTING 1 — Coming Soon -->
+      <div class="polaroid-card active" data-index="0" role="article" aria-label="Coming Soon Listing" style="transform:rotate(0deg) scale(1);">
+        <div class="polaroid-photo" id="listing-photo-1" role="img" aria-label="Coming Soon" style="background:linear-gradient(135deg,#3B5E45 0%,#A8BFA8 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" style="width:48px;height:48px;"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="polaroid-label">
+          <div class="polaroid-address" style="font-size:1.4rem;color:#3B5E45;">Coming Soon</div>
+          <div class="polaroid-price" style="font-size:1rem;color:#A8BFA8;">New listings on the way!</div>
+          <div class="polaroid-details">Check back soon · Calhoun County</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="polaroid-nav">
+      <button class="nav-arrow" id="listing-prev" aria-label="Previous listing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="dot-nav" id="listing-dots" role="tablist" aria-label="Listing navigation"></div>
+      <button class="nav-arrow" id="listing-next" aria-label="Next listing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================================
+  TIKTOK FEATURE SECTION
+============================================================ -->
+<section id="featured-reel" style="padding:80px 0;background:var(--beige);" aria-labelledby="tiktok-heading">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="tiktok-grid">
+
+      <div>
+        <span class="section-label reveal">Follow Along</span>
+        <h2 class="font-pacifico reveal reveal-delay-1" id="tiktok-heading" style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--forest);margin-bottom:16px;line-height:1.3;">See It Before<br>You Step Inside</h2>
+        <p class="font-lora reveal reveal-delay-2" style="font-style:italic;color:var(--mid);font-size:1.05rem;line-height:1.75;margin-bottom:24px;">I share home tours, local market tips, and behind-the-scenes real estate content on TikTok. Follow along and never miss a new listing or piece of advice!</p>
+        <a href="https://www.tiktok.com/@natalieglaveyrealtor" target="_blank" rel="noopener noreferrer" class="btn btn-green reveal reveal-delay-3" style="display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/></svg>
+          Follow on TikTok
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="display:flex;justify-content:center;">
+        <blockquote
+          class="tiktok-embed"
+          cite="https://www.tiktok.com/@natalieglaveyrealtor/photo/7655710076958739742"
+          data-video-id="7655710076958739742"
+          style="max-width:325px;min-width:325px;border-radius:16px;overflow:hidden;"
+        >
+          <section></section>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<style>
+@media (max-width:860px) { .tiktok-grid { grid-template-columns: 1fr !important; } }
+</style>
+<!-- ============================================================
+  WHY CALHOUN COUNTY SECTION
+============================================================ -->
+<section id="area" style="padding:100px 0;background:var(--cream);" aria-labelledby="area-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">The Place I Call Home</span>
+      <h2 class="section-title font-pacifico reveal reveal-delay-1" id="area-heading">Why Calhoun County?</h2>
+      <p class="section-sub font-lora reveal reveal-delay-2">Eastern Alabama's best-kept secret — and I'm here to let you in on it.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px;" class="area-grid">
+
+      <div class="reveal reveal-delay-1" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Affordable Living</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">Calhoun County offers some of the most affordable home prices in Alabama — giving buyers more space, more value, and more home for their money.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Small Town Charm</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">From Oxford's local shops to Jacksonville's college-town energy and Anniston's rich history — every community here has its own personality and warmth.</p>
+      </div>
+
+      <div class="reveal reveal-delay-3" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Community First</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">Neighbors still wave from the porch here. Whether you're raising a family or looking for a quieter pace of life, Eastern Alabama welcomes you like you already belong.</p>
+      </div>
+
+      <div class="reveal reveal-delay-1" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Prime Location</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">Sitting right off I-20, Calhoun County gives you easy access to Birmingham, Atlanta, and beyond — without the big-city price tag or the big-city hustle.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Great Schools</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">From Oxford City Schools to Jacksonville State University right up the road, Calhoun County is a wonderful place to grow, learn, and put down roots for your family.</p>
+      </div>
+
+      <div class="reveal reveal-delay-3" style="background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;">
+        <div style="width:56px;height:56px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width:26px;height:26px;"><path d="M3 17l4-8 4 4 4-6 4 10"/><path d="M3 21h18"/></svg>
+        </div>
+        <h3 style="font-family:'Pacifico',cursive;color:var(--forest);font-size:1.2rem;margin-bottom:10px;">Growing Market</h3>
+        <p style="font-family:'Lora',serif;font-style:italic;color:var(--mid);font-size:0.95rem;line-height:1.7;">Eastern Alabama's real estate market is moving — making now a smart time to buy before prices rise. I'll help you find the right home at the right price, right now.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+@media (max-width:860px) { .area-grid { grid-template-columns: repeat(2,1fr) !important; } }
+@media (max-width:540px) { .area-grid { grid-template-columns: 1fr !important; } }
+</style>
+<!-- ============================================================
+  5. TESTIMONIALS
+============================================================ -->
+<section id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Kind Words</span>
+      <h2 class="section-title font-pacifico reveal reveal-delay-1" id="testimonials-heading">What My Clients Say</h2>
+    </div>
+
+    <div class="testimonials-track-wrap" id="testimonials-wrap">
+      <div class="testimonials-track" id="testimonials-track" role="list">
+
+        <div class="testimonial-card" role="listitem">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="testimonial-inner">
+            <div class="testimonial-stars" aria-label="5 stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p class="testimonial-quote font-lora">"Natalie made buying our first home feel like the most natural thing in the world. She answered every panicked text, explained every document, and never made us feel rushed. We couldn't have done it without her."</p>
+            <div class="testimonial-client font-caveat">Emily & Jordan T.</div>
+            <div class="testimonial-location">Google Review · Verified</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" role="listitem">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="testimonial-inner">
+            <div class="testimonial-stars" aria-label="5 stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p class="testimonial-quote font-lora">"We listed on a Thursday and had an offer over asking price by Sunday. Natalie knows this market inside and out, and her marketing made our home look absolutely stunning."</p>
+            <div class="testimonial-client font-caveat">Marcus W.</div>
+            <div class="testimonial-location">Anniston, AL Â· Home Seller</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" role="listitem">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="testimonial-inner">
+            <div class="testimonial-stars" aria-label="5 stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p class="testimonial-quote font-lora">"I was relocating from out of state and was completely lost. Natalie did video walkthroughs, sent me neighborhood videos, and was my eyes and ears in Alabama. She found us our dream home without me even being there."</p>
+            <div class="testimonial-client font-caveat">Priscilla R.</div>
+            <div class="testimonial-location">Relocation Buyer Â· Jacksonville, AL</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" role="listitem">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="testimonial-inner">
+            <div class="testimonial-stars" aria-label="5 stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p class="testimonial-quote font-lora">"Patient, warm, and sharp as a tack. Natalie negotiated us down $18,000 from the asking price and still got us the closing timeline we needed. She truly advocates for her buyers."</p>
+            <div class="testimonial-client font-caveat">The Hendersons</div>
+            <div class="testimonial-location">Piedmont, AL Â· Move-Up Buyers</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" role="listitem">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="testimonial-inner">
+            <div class="testimonial-stars" aria-label="5 stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p class="testimonial-quote font-lora">"Natalie doesn't just sell houses â€” she helps families find homes. She took time to understand what mattered most to us, and she never gave up until she found the perfect fit. We are so grateful."</p>
+            <div class="testimonial-client font-caveat">Sandra & Tom L.</div>
+            <div class="testimonial-location">Oxford, AL Â· Downsizing</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="https://www.google.com/maps/place/Natalie+Glavey-KW+Realty+Group/@33.8546205,-85.9112855,9z/data=!3m1!4b1!4m6!3m5!1s0x6535a7e61bdf9b81:0xd6fe7b1ebef976f4!8m2!3d33.8546205!4d-85.9112855!16s%2Fg%2F11z7p56lym" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="gap:10px;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="none"/><path d="M21.35 11.1h-9.17v2.73h5.24c-.23 1.24-.95 2.29-2.01 2.99v2.48h3.26c1.91-1.76 3.01-4.35 3.01-7.35 0-.5-.04-.99-.11-1.47l-.22 .62z" fill="#4285F4"/><path d="M12.18 22c2.7 0 4.96-.9 6.62-2.43l-3.26-2.48c-.89.6-2.03.95-3.36.95-2.58 0-4.77-1.74-5.55-4.09H3.3v2.56C4.95 19.99 8.33 22 12.18 22z" fill="#34A853"/><path d="M6.63 13.95A5.98 5.98 0 016.3 12c0-.68.12-1.34.33-1.95V7.49H3.3A9.98 9.98 0 002 12c0 1.61.39 3.13 1.07 4.47l3.56-2.52z" fill="#FBBC05"/><path d="M12.18 6.02c1.46 0 2.77.5 3.8 1.49l2.85-2.85C17.13 3.05 14.87 2 12.18 2 8.33 2 4.95 4.01 3.3 7.49l3.33 2.56c.78-2.35 2.97-4.03 5.55-4.03z" fill="#EA4335"/></svg>
+        Leave a Google Review
+      </a>
+    </div>
+
+    <div class="testimonials-nav">
+      <button class="nav-arrow" id="testi-prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="dot-nav" id="testi-dots" role="tablist" aria-label="Testimonial navigation"></div>
+      <button class="nav-arrow" id="testi-next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  6. CONTACT FORM
+============================================================ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Intro & Details -->
+      <div>
+        <span class="section-label reveal">Get in Touch</span>
+        <h2 class="contact-intro-title font-pacifico reveal reveal-delay-1" id="contact-heading">Let's Find<br>Your Home.</h2>
+        <p class="contact-intro-body font-lora reveal reveal-delay-2">
+          Ready to start the journey? Whether you're just curious or ready to make a move, I'd love to hear from you. Fill out the form and I'll reach out within 24 hours â€” pinky promise.
+        </p>
+
+        <div class="contact-details">
+
+          <div class="contact-detail-item reveal reveal-delay-2">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">Oxford, Alabama &amp; Calhoun County</div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item reveal reveal-delay-3">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.34 2.18a2 2 0 011.98-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.62 6.62l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <!-- ============================================================
+                SWAP PHONE NUMBER:
+                Change the href and display text to your real number.
+                Format: href="tel:+12566768440"
+              ============================================================ -->
+              <div class="contact-detail-value"><a href="tel:+12566768440">(256) 676-8440</a></div>
+            </div>
+          </div>
+
+          <div class="contact-detail-item reveal reveal-delay-4">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <!-- ============================================================
+                SWAP EMAIL:
+                Change the href and display text to your real email.
+              ============================================================ -->
+              <div class="contact-detail-value"><a href="mailto:NatalieGlaveyRealtor@gmail.com">NatalieGlaveyRealtor@gmail.com</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Contact Form Card -->
+      <div class="reveal reveal-delay-2">
+        <div class="form-card">
+          <div class="tape-strip" aria-hidden="true"></div>
+
+          <!-- Form -->
+          <div class="form-inner" id="contact-form-wrap">
+            <form id="contact-form" novalidate aria-label="Contact Natalie Glavey">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-first">First Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="cf-first" name="first_name" required autocomplete="given-name" placeholder="Jane" />
+                </div>
+                <div class="form-group">
+                  <label for="cf-last">Last Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="cf-last" name="last_name" required autocomplete="family-name" placeholder="Smith" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="jane@example.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="cf-phone">Phone</label>
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="(256) 676-8440" />
+              </div>
+
+              <div class="form-group">
+                <label for="cf-interest">I'm interested in <span aria-hidden="true">*</span></label>
+                <select id="cf-interest" name="interest" required>
+                  <option value="">Select oneâ€¦</option>
+                  <option value="buying">Buying a Home</option>
+                  <option value="selling">Selling My Home</option>
+                  <option value="both">Buying &amp; Selling</option>
+                  <option value="investing">Real Estate Investing</option>
+                  <option value="renting">Rental Properties</option>
+                  <option value="other">Just Have Questions</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+                <textarea id="cf-message" name="message" required placeholder="Tell me a little about what you're looking forâ€¦"></textarea>
+              </div>
+
+              <!-- Consent Checkbox -->
+              <div class="checkbox-group" id="cf-consent-group">
+                <input type="checkbox" id="cf-consent" name="consent" required />
+                <label class="checkbox-custom" for="cf-consent" role="checkbox" aria-checked="false" aria-required="true" tabindex="0"></label>
+                <label class="checkbox-label" for="cf-consent">
+                  I give Natalie Glavey permission to contact me by phone, email, or text about my real estate inquiry. I understand I can opt out at any time. <span aria-hidden="true">*</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;padding:15px;">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Success State -->
+          <div class="form-success" id="contact-success" role="alert" aria-live="polite">
+            <div class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 class="success-title font-pacifico">Message Received!</h3>
+            <p class="success-body font-lora">Thank you so much for reaching out. I'll be in touch within 24 hours. In the meantime, feel free to browse more listings.</p>
+            <p class="success-sig font-caveat">â€” Natalie</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  7. NEWSLETTER SIGNUP
+============================================================ -->
+<section id="newsletter" aria-labelledby="newsletter-heading">
+  <div class="container">
+    <div class="newsletter-grid">
+
+      <!-- Left: Copy -->
+      <div>
+        <span class="newsletter-eyebrow reveal">Don't Miss Out</span>
+        <h2 class="newsletter-title font-pacifico reveal reveal-delay-1" id="newsletter-heading">Stay in the Loop</h2>
+        <p class="newsletter-body font-lora reveal reveal-delay-2">
+          Get new listings, market updates, and home tips delivered right to your inbox â€” no spam, just the good stuff from someone who actually knows Calhoun County.
+        </p>
+      </div>
+
+      <!-- Right: Newsletter Form -->
+      <div class="reveal reveal-delay-2">
+        <div class="newsletter-card">
+          <div class="tape-strip" aria-hidden="true"></div>
+
+          <div class="newsletter-form-inner" id="newsletter-form-wrap">
+            <form id="newsletter-form" novalidate aria-label="Newsletter signup">
+              <div class="form-group">
+                <label for="nl-name">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="nl-name" name="name" required autocomplete="name" placeholder="Jane Smith" />
+              </div>
+              <div class="form-group">
+                <label for="nl-email">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="jane@example.com" />
+              </div>
+
+              <div class="checkbox-group" id="nl-consent-group" style="margin-bottom:20px;">
+                <input type="checkbox" id="nl-consent" name="nl_consent" required />
+                <label class="checkbox-custom" for="nl-consent" role="checkbox" aria-checked="false" aria-required="true" tabindex="0"></label>
+                <label class="checkbox-label" for="nl-consent">
+                  Yes, I'd like to receive emails from Natalie Glavey about listings and real estate tips. I can unsubscribe at any time. <span aria-hidden="true">*</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;padding:14px;">
+                Sign Me Up
+              </button>
+            </form>
+          </div>
+
+          <div class="newsletter-success" id="newsletter-success" role="alert" aria-live="polite">
+            <div class="success-icon" aria-hidden="true" style="margin:0 auto 16px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 class="success-title font-pacifico" style="font-size:1.4rem;">You're on the List!</h3>
+            <p class="success-body font-lora" style="font-size:0.95rem;">Welcome to my little corner of Alabama. Good things are coming your way.</p>
+            <p class="success-sig font-caveat">â€” Natalie</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  8. MARQUEE BANNER
+============================================================ -->
+<div id="marquee" aria-hidden="true" role="presentation">
+  <div class="marquee-track" id="marquee-track">
+    <!-- Duplicated for seamless loop -->
+    <span class="marquee-item font-pacifico">Let's start your journey âœ¦</span>
+    <span class="marquee-item font-pacifico">Rooted in Alabama âœ¦</span>
+    <span class="marquee-item font-pacifico">Here to Find You Home âœ¦</span>
+    <span class="marquee-item font-pacifico">Calhoun County's Trusted Agent âœ¦</span>
+    <span class="marquee-item font-pacifico">Let's start your journey âœ¦</span>
+    <span class="marquee-item font-pacifico">Rooted in Alabama âœ¦</span>
+    <span class="marquee-item font-pacifico">Here to Find You Home âœ¦</span>
+    <span class="marquee-item font-pacifico">Calhoun County's Trusted Agent âœ¦</span>
+    <span class="marquee-item font-pacifico">Let's start your journey âœ¦</span>
+    <span class="marquee-item font-pacifico">Rooted in Alabama âœ¦</span>
+    <span class="marquee-item font-pacifico">Here to Find You Home âœ¦</span>
+    <span class="marquee-item font-pacifico">Calhoun County's Trusted Agent âœ¦</span>
+  </div>
+</div>
+
+<!-- ============================================================
+  9. FOOTER
+============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo font-pacifico" aria-label="Natalie Glavey â€” Back to top">Natalie Glavey</a>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Natalie Glavey Real Estate &nbsp;Â·&nbsp; Oxford, Alabama</p>
+
+      <div class="footer-right">
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <!-- ============================================================
+            SWAP SOCIAL LINKS:
+            Replace href="#" with your real profile URL.
+            Facebook: href="https://facebook.com/YOUR-PAGE-NAME"
+            Instagram: href="https://instagram.com/YOUR-HANDLE"
+          ============================================================ -->
+          <a href="https://www.facebook.com/NatalieGlaveyKwRealtyGroup" class="social-icon" aria-label="Natalie Glavey on Facebook" target="_blank" rel="noopener noreferrer">
+            <!-- Facebook icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/natalieglaveyrealtor" class="social-icon" aria-label="Natalie Glavey on Instagram" target="_blank" rel="noopener noreferrer">
+            <!-- Instagram icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@natalieglaveyrealtor" class="social-icon" aria-label="Natalie Glavey on TikTok" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.16 8.16 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+  FLOATING CALL BUTTON
+============================================================ -->
+<!-- SWAP PHONE: Change tel:+12566768440 to your real number -->
+<a href="tel:+12566768440" id="call-pill" aria-label="Call Natalie Glavey">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.34 2.18a2 2 0 011.98-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.62 6.62l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </svg>
+  <span class="call-label">Call Natalie</span>
+</a>
+
+<!-- ============================================================
+  JAVASCRIPT
+============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ============================================================
+     NAV â€” scroll shrink + hamburger
+  ============================================================ */
+  const nav = document.getElementById('main-nav');
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ============================================================
+     HERO â€” parallax
+  ============================================================ */
+  const heroImage = document.getElementById('hero-image');
+  if (heroImage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      heroImage.style.transform = `translateY(${y * 0.4}px)`;
+    }, { passive: true });
+  }
+
+  /* ============================================================
+     SCROLL REVEAL (IntersectionObserver)
+  ============================================================ */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+
+  /* ============================================================
+     POLAROID LISTING CAROUSEL
+  ============================================================ */
+  const listings = [
+    { index: 0, rot: 0,    tx: 0,    tz: 0,   scale: 1 },
+    { index: 1, rot: -3,   tx: -10,  tz: -10, scale: 0.97 },
+    { index: 2, rot: 2.5,  tx: -18,  tz: -20, scale: 0.94 },
+    { index: 3, rot: -1.5, tx: -24,  tz: -30, scale: 0.91 },
+  ];
+
+  const cards = Array.from(document.querySelectorAll('.polaroid-card'));
+  const dotsContainer = document.getElementById('listing-dots');
+  let currentListing = 0;
+  const totalListings = cards.length;
+
+  function buildListingDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalListings; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Go to listing ' + (i + 1));
+      dot.setAttribute('aria-selected', String(i === 0));
+      dot.addEventListener('click', () => goToListing(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateListingDots(idx) {
+    dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', String(i === idx));
+    });
+  }
+
+  function applyPolaroidLayout(activeIdx) {
+    cards.forEach((card, cardIdx) => {
+      // Which slot is this card in relative to active?
+      const slot = (cardIdx - activeIdx + totalListings) % totalListings;
+      card.classList.remove('active', 'behind-1', 'behind-2', 'behind-3', 'exit-left');
+
+      const li = listings[slot];
+      if (!li) {
+        card.style.transform = 'translateX(160%) rotate(10deg) scale(0.85)';
+        card.style.opacity = '0';
+        card.style.zIndex = '0';
+        return;
+      }
+
+      if (slot === 0) {
+        card.classList.add('active');
+        card.style.transform = `rotate(${li.rot}deg) scale(${li.scale})`;
+        card.style.opacity = '1';
+      } else {
+        card.classList.add(`behind-${slot}`);
+        card.style.transform = `translateX(${li.tx}px) translateZ(${li.tz}px) rotate(${li.rot}deg) scale(${li.scale})`;
+        card.style.opacity = slot < 3 ? '1' : '0';
+      }
+    });
+  }
+
+  function goToListing(newIdx) {
+    if (newIdx === currentListing) return;
+
+    const outgoingCard = cards[currentListing];
+    outgoingCard.classList.add('exit-left');
+
+    setTimeout(() => {
+      currentListing = (newIdx + totalListings) % totalListings;
+      applyPolaroidLayout(currentListing);
+      updateListingDots(currentListing);
+    }, 120);
+  }
+
+  document.getElementById('listing-prev').addEventListener('click', () => {
+    goToListing((currentListing - 1 + totalListings) % totalListings);
+  });
+  document.getElementById('listing-next').addEventListener('click', () => {
+    goToListing((currentListing + 1) % totalListings);
+  });
+
+  buildListingDots();
+  applyPolaroidLayout(0);
+
+  /* ============================================================
+     TESTIMONIALS SLIDER
+  ============================================================ */
+  const track = document.getElementById('testimonials-track');
+  const testimCards = track.querySelectorAll('.testimonial-card');
+  const testiDotsEl = document.getElementById('testi-dots');
+  let testiCurrent = 0;
+
+  function getVisibleCount() {
+    return window.innerWidth <= 860 ? 1 : 2;
+  }
+
+  function totalTestiSlides() {
+    return Math.max(0, testimCards.length - getVisibleCount() + 1);
+  }
+
+  function buildTestiDots() {
+    testiDotsEl.innerHTML = '';
+    const count = totalTestiSlides();
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+      dot.setAttribute('aria-selected', String(i === 0));
+      dot.addEventListener('click', () => goToTesti(i));
+      testiDotsEl.appendChild(dot);
+    }
+  }
+
+  function updateTestiDots(idx) {
+    testiDotsEl.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', String(i === idx));
+    });
+  }
+
+  function goToTesti(idx) {
+    const max = totalTestiSlides() - 1;
+    testiCurrent = Math.max(0, Math.min(idx, max));
+    const visCount = getVisibleCount();
+    const cardWidth = testimCards[0].offsetWidth + 24; // gap
+    track.style.transform = `translateX(-${testiCurrent * cardWidth}px)`;
+    updateTestiDots(testiCurrent);
+  }
+
+  document.getElementById('testi-prev').addEventListener('click', () => goToTesti(testiCurrent - 1));
+  document.getElementById('testi-next').addEventListener('click', () => goToTesti(testiCurrent + 1));
+
+  window.addEventListener('resize', () => {
+    testiCurrent = 0;
+    track.style.transform = 'translateX(0)';
+    buildTestiDots();
+    updateTestiDots(0);
+  });
+
+  buildTestiDots();
+
+  /* ============================================================
+     CONTACT FORM
+  ============================================================ */
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  const contactWrap = document.getElementById('contact-form-wrap');
+
+  function validateField(el) {
+    if (el.hasAttribute('required') && !el.value.trim()) {
+      el.classList.add('error');
+      return false;
+    }
+    if (el.type === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) {
+      el.classList.add('error');
+      return false;
+    }
+    el.classList.remove('error');
+    return true;
+  }
+
+  // Remove error on input
+  contactForm.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('error'));
+  });
+
+  // Custom checkbox keyboard support
+  document.querySelectorAll('.checkbox-custom[role="checkbox"]').forEach(cb => {
+    cb.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        const input = document.getElementById(cb.getAttribute('for'));
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        cb.setAttribute('aria-checked', String(input.checked));
+      }
+    });
+  });
+
+  // Update aria-checked on real checkbox
+  document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const label = document.querySelector(`label.checkbox-custom[for="${input.id}"]`);
+      if (label) label.setAttribute('aria-checked', String(input.checked));
+    });
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    contactForm.querySelectorAll('input[required], select[required], textarea[required]').forEach(el => {
+      if (!validateField(el)) valid = false;
+    });
+
+    const consentCheck = document.getElementById('cf-consent');
+    const consentGroup = document.getElementById('cf-consent-group');
+    if (!consentCheck.checked) {
+      valid = false;
+      consentGroup.classList.add('checkbox-error');
+      setTimeout(() => consentGroup.classList.remove('checkbox-error'), 500);
+    }
+
+    if (!valid) return;
+
+    /* ============================================================
+      FORM SUBMISSION:
+      This form currently shows a success message on the client side.
+      To actually send the data, you have several options:
+
+      Option A â€” Formspree (free, easy):
+        1. Sign up at formspree.io
+        2. Create a form, get your endpoint (e.g. https://formspree.io/f/XXXXXXX)
+        3. Change the form action: contactForm.action = 'https://formspree.io/f/XXXXXXX'
+        4. Use fetch() to POST the FormData
+
+      Option B â€” Netlify Forms (if hosted on Netlify):
+        Add netlify attribute to the <form> tag.
+
+      Option C â€” EmailJS:
+        Use their SDK to send emails directly from the browser.
+    ============================================================ */
+
+    // Show success state
+    contactWrap.style.display = 'none';
+    contactSuccess.classList.add('visible');
+  });
+
+  /* ============================================================
+     NEWSLETTER FORM
+  ============================================================ */
+  const nlForm = document.getElementById('newsletter-form');
+  const nlSuccess = document.getElementById('newsletter-success');
+  const nlWrap = document.getElementById('newsletter-form-wrap');
+
+  nlForm.querySelectorAll('input').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('error'));
+  });
+
+  nlForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    nlForm.querySelectorAll('input[required]').forEach(el => {
+      const f = el.type === 'checkbox' ? el.checked : el.value.trim();
+      if (!f) {
+        el.classList.add('error');
+        valid = false;
+        if (el.type === 'checkbox') {
+          const grp = document.getElementById('nl-consent-group');
+          grp.classList.add('checkbox-error');
+          setTimeout(() => grp.classList.remove('checkbox-error'), 500);
+        }
+      } else {
+        el.classList.remove('error');
+      }
+    });
+
+    if (!valid) return;
+
+    nlWrap.style.display = 'none';
+    nlSuccess.classList.add('visible');
+  });
+
+  /* ============================================================
+     FOOTER YEAR
+  ============================================================ */
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
